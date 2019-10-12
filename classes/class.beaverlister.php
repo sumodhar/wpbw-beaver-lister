@@ -165,7 +165,12 @@ class BeaverLister {
 	        		}
 
 	        		foreach ($usedModules as $key => $modules) {
-	        			echo '<strong>' . $key . ':</strong><br/>' . implode(', ', array_unique( $modules ) ) . '<br/>';
+	        			if ( !empty( $key ) ) {
+	        				echo '<strong>' . $key . ':</strong><br/>' . implode(', ', array_unique( $modules ) ) . '<br/>';
+	        			}
+	        			else {
+	        				echo 'A <b>section</b> on this page has no Beaver Builder modules added yet.<br/>';	
+	        			}
 	        		}
 	        	}
 	        	break;
